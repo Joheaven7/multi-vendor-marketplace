@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+
+  --color-canvas: #faf9f6;
+  --color-surface: #ffffff;
+  --color-ink: #141413;
+  --color-muted: #6a6a64;
+  --color-subtle: #85847c;
+  --color-line: #e8e6df;
+  --color-line-strong: #d3d0c6;
+
+  --color-accent: #8a6a3d;
+  --color-accent-hover: #6f5430;
+  --color-accent-soft: #f4ede0;
+  --color-on-accent: #ffffff;
+
+  --color-success: #2f7d5b;
+  --color-success-soft: #e6f2ec;
+  --color-warning: #8f5a14;
+  --color-warning-soft: #fbf0dc;
+  --color-danger: #b3362d;
+  --color-danger-soft: #fbe9e7;
+  --color-info: #2f5f9e;
+  --color-info-soft: #e7eff9;
+
+  --radius-xs: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  --shadow-soft: 0 1px 2px rgb(20 20 19 / 0.04), 0 4px 14px rgb(20 20 19 / 0.05);
+  --shadow-lift: 0 2px 4px rgb(20 20 19 / 0.05), 0 12px 28px rgb(20 20 19 / 0.09);
+  --shadow-overlay: 0 8px 16px rgb(20 20 19 / 0.08), 0 24px 56px rgb(20 20 19 / 0.18);
+}
+
+/* Theme variants. Same tokens, different personality per area. */
+[data-area="seller"] {
+  --color-canvas: #f5f6f8;
+  --color-line: #e3e6ec;
+  --color-line-strong: #cdd2dc;
+  --color-muted: #5f6675;
+  --color-accent: #3b4cca;
+  --color-accent-hover: #2f3da6;
+  --color-accent-soft: #eceefb;
+}
+
+[data-area="admin"] {
+  --color-canvas: #f1f3f5;
+  --color-line: #dee2e6;
+  --color-line-strong: #c7cdd3;
+  --color-muted: #58606b;
+  --color-accent: #1f2a37;
+  --color-accent-hover: #111827;
+  --color-accent-soft: #e5e8ec;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

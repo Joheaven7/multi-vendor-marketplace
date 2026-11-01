@@ -1,0 +1,36 @@
+node_modules
+dist
+.next
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+coverage
+.vscode/*
+!.vscode/settings.json
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+.next/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
